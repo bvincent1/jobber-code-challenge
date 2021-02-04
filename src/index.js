@@ -1,3 +1,8 @@
+/**
+ * Chainable calculator utility class.
+ *
+ * Allows for ruby-esc syntax of `<ClassInstance>.one.plus.two.minus.three.result`.
+ */
 class CalcChained extends Number {
   constructor(init) {
     if (typeof init === "number") {
@@ -5,7 +10,7 @@ class CalcChained extends Number {
     } else {
       super();
     }
-    this.value = null || init;
+    this._value = null || init;
   }
 
   /**
@@ -14,10 +19,10 @@ class CalcChained extends Number {
    * @param {Number} newNumber this
    */
   addNumberToValue(newNumber) {
-    if (!this.value) {
+    if (!this._value) {
       return new CalcChained(newNumber);
     } else {
-      return new CalcChained(eval(`${this.value}${newNumber}`));
+      return new CalcChained(eval(`${this._value}${newNumber}`));
     }
   }
 
@@ -27,8 +32,23 @@ class CalcChained extends Number {
    * @param {'+' | '-' | '*' | '/'} newOperator this
    */
   addOperatorToValue(newOperator) {
-    this.value = `${this.value}${newOperator}`;
+    this._value = `${this._value}${newOperator}`;
     return this;
+  }
+
+  /**
+   * returns equality comparison of [num] with [this._value]
+   * @param {Number} num Boolean
+   */
+  equals(num) {
+    return num === this._value;
+  }
+
+  /**
+   * Getter for intervalue _value, doesn't need any type conversions for deep equality.
+   */
+  get result() {
+    return this._value;
   }
 
   /**
@@ -92,9 +112,9 @@ class CalcChained extends Number {
 
 const Calc = {
   get new() {
-    const e = new CalcChained(0);
-    return e;
-  }
+    return new CalcChained(0);
+  },
+  CalcChained
 };
 
 export default Calc;

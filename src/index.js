@@ -1,6 +1,11 @@
-class CalcChained {
-  constructor() {
-    this.value = null;
+class CalcChained extends Number {
+  constructor(init) {
+    if (typeof init === "number") {
+      super(init);
+    } else {
+      super();
+    }
+    this.value = null || init;
   }
 
   /**
@@ -10,10 +15,9 @@ class CalcChained {
    */
   addNumberToValue(newNumber) {
     if (!this.value) {
-      this.value = newNumber;
-      return this;
+      return new CalcChained(newNumber);
     } else {
-      return eval(`${this.value}${newNumber}`);
+      return new CalcChained(eval(`${this.value}${newNumber}`));
     }
   }
 
@@ -88,8 +92,9 @@ class CalcChained {
 
 const Calc = {
   get new() {
-    return new CalcChained();
-  },
+    const e = new CalcChained(0);
+    return e;
+  }
 };
 
 export default Calc;

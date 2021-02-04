@@ -3,6 +3,11 @@ class CalcChained {
     this.value = null;
   }
 
+  /**
+   * Adds [newNumber] to internal  value.
+   * If there is already a value returns the eval result of [this.value] and [newNumber].
+   * @param {Number} newNumber this
+   */
   addNumberToValue(newNumber) {
     if (!this.value) {
       this.value = newNumber;
@@ -12,11 +17,19 @@ class CalcChained {
     }
   }
 
+  /**
+   * Adds [newOperator] to internal  value.
+   * If there is already a value returns the eval result.
+   * @param {'+' | '-' | '*' | '/'} newOperator this
+   */
   addOperatorToValue(newOperator) {
     this.value = `${this.value}${newOperator}`;
     return this;
   }
 
+  /**
+   * Value getters for 0-9
+   */
   get one() {
     return this.addNumberToValue(1);
   }
@@ -53,6 +66,9 @@ class CalcChained {
     return this.addNumberToValue(9);
   }
 
+  /**
+   * Value operators for +,-,*,/
+   */
   get plus() {
     return this.addOperatorToValue("+");
   }

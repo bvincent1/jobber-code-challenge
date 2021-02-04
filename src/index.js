@@ -101,7 +101,7 @@ class CalcChained extends Number {
     return this.addOperatorToValue("-");
   }
 
-  get multiply() {
+  get times() {
     return this.addOperatorToValue("*");
   }
 

@@ -5,17 +5,19 @@ your solutions successfully solves the required problems. Some problems may not 
 in all languages; in such a case an appropriate language should be used. We are evaluating
 these challenges from the lens that this is your best possible code.
 Description
-Fluent Calculator
+
+## Fluent Calculator
+
 The Kata is inspired by the “Calculating with Functions Kata for JavaScript” on codewars. The
 goal is to implement a simple calculator which uses fluent syntax:
 
 ```js
 Calc.new.one.plus.two;
 Calc.new.five.minus.six;
-Calc.new.seven.times.two;
-Calc.new.nine.divided_by.three;
 // Should return -1
+Calc.new.seven.times.two;
 // Should return 14
+Calc.new.nine.divided_by.three;
 // Should return 3
 ```
 
@@ -25,7 +27,9 @@ Each calculation consists of one operation only and will return an integer.
 Note: This is not a string parsing problem. The calls above are a chain of methods. Some
 languages may require parenthesis in method calls. That is OK, but consider a different
 language what would support the above syntax if possible.
-Secret String
+
+## Secret String
+
 There is a secret string which is unknown to you. Given a collection of random triplets from the
 string, recover the original string.
 A triplet here is defined as a sequence of three letters such that each letter occurs somewhere
@@ -46,7 +50,7 @@ triplets_1 = [
   ["a", "t", "s"],
   ["h", "a", "p"],
   ["t", "i", "s"],
-  ["w", "h", "s"],
+  ["w", "h", "s"]
 ];
 ```
 

@@ -17,6 +17,10 @@ describe("Cacl", () => {
     expect(Calc.new.nine.plus.nine.result).toBe(18);
   });
 
+  it("should a number greater than 10 (81)", () => {
+    expect(Calc.new.nine.times.nine.result).toBe(81);
+  });
+
   it("should return a negative number (-5)", () => {
     expect(Calc.new.one.minus.six.result).toBe(-5);
   });

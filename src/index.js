@@ -65,7 +65,7 @@ class CalcChained {
     return this.addOperatorToValue("*");
   }
 
-  get divide_by() {
+  get divided_by() {
     return this.addOperatorToValue("/");
   }
 }

@@ -18,10 +18,10 @@ describe("Cacl", () => {
   });
 
   it("should return -0.33333", () => {
-    expect(Calc.new.one.divide_by.three).toBe(1 / 3);
+    expect(Calc.new.one.divided_by.three).toBe(1 / 3);
   });
 
   it("should return current value", () => {
-    expect(Calc.new.one.divide_by).toEqual({ value: "1/" });
+    expect(Calc.new.one.divided_by).toEqual({ value: "1/" });
   });
 });

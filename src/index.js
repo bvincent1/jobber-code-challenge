@@ -1,4 +1,4 @@
-class NumbersText {
+class CalcChained {
   constructor() {
     this.value = null;
   }
@@ -72,7 +72,7 @@ class NumbersText {
 
 const Calc = {
   get new() {
-    return new NumbersText();
+    return new CalcChained();
   },
 };
 

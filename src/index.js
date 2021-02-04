@@ -1,7 +1,7 @@
 /**
  * Chainable calculator utility class.
  *
- * Allows for ruby-esc syntax of `<ClassInstance>.one.plus.two.minus.three.result`.
+ * Allows for ruby-esq syntax of `<ClassInstance>.one.plus.two.minus.three.result`.
  */
 class CalcChained extends Number {
   constructor(init) {

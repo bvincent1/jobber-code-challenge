@@ -18,7 +18,7 @@ class CalcChained extends Number {
    * If there is already a value returns the eval result of [this.value] and [newNumber].
    * @param {Number} newNumber this
    */
-  addNumberToValue(newNumber) {
+  _addNumberToValue(newNumber) {
     if (!this._value) {
       return new CalcChained(newNumber);
     } else {
@@ -31,7 +31,7 @@ class CalcChained extends Number {
    * If there is already a value returns the eval result.
    * @param {'+' | '-' | '*' | '/'} newOperator this
    */
-  addOperatorToValue(newOperator) {
+  _addOperatorToValue(newOperator) {
     this._value = `${this._value}${newOperator}`;
     return this;
   }
@@ -55,58 +55,58 @@ class CalcChained extends Number {
    * Value getters for 0-9
    */
   get one() {
-    return this.addNumberToValue(1);
+    return this._addNumberToValue(1);
   }
 
   get two() {
-    return this.addNumberToValue(2);
+    return this._addNumberToValue(2);
   }
 
   get three() {
-    return this.addNumberToValue(3);
+    return this._addNumberToValue(3);
   }
 
   get four() {
-    return this.addNumberToValue(4);
+    return this._addNumberToValue(4);
   }
 
   get five() {
-    return this.addNumberToValue(5);
+    return this._addNumberToValue(5);
   }
 
   get six() {
-    return this.addNumberToValue(6);
+    return this._addNumberToValue(6);
   }
 
   get seven() {
-    return this.addNumberToValue(7);
+    return this._addNumberToValue(7);
   }
 
   get eight() {
-    return this.addNumberToValue(8);
+    return this._addNumberToValue(8);
   }
 
   get nine() {
-    return this.addNumberToValue(9);
+    return this._addNumberToValue(9);
   }
 
   /**
    * Value operators for +,-,*,/
    */
   get plus() {
-    return this.addOperatorToValue("+");
+    return this._addOperatorToValue("+");
   }
 
   get minus() {
-    return this.addOperatorToValue("-");
+    return this._addOperatorToValue("-");
   }
 
   get times() {
-    return this.addOperatorToValue("*");
+    return this._addOperatorToValue("*");
   }
 
   get divided_by() {
-    return this.addOperatorToValue("/");
+    return this._addOperatorToValue("/");
   }
 }
 
